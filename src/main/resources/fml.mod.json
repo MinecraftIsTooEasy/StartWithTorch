@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "start_with_torch",
+  "version": "1.0.0",
+  "depends": {
+    "fishmodloader": ">=3.0.0"
+  },
+  "environment": "*",
+  "name": "Start With Torch",
+  "description": "",
+  "authors": [
+    "Inf1nlty"
+  ],
+  "entrypoints": {
+    "main": [
+          "com.inf1nlty.swt.StartWithTorchMod"
+        ]
+  },
+  "mixins": [
+    "swt.mixins.json"
+  ]
+}
