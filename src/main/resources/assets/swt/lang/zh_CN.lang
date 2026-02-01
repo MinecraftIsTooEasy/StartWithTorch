@@ -1,0 +1,9 @@
+tile.low_torch.name=低品质火把
+
+item.low_torch_item.name=低品质火把
+
+item.low_torch_item.tooltip=一个光线更暗且品质较低的火把。
+
+swt.claim.success=成功领取开局火把。
+swt.claim.already=你已经领取过火把了！
+swt.claim.onlyplayer=只有玩家可以使用此命令。

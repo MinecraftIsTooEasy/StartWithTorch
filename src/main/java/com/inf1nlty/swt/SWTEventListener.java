@@ -19,12 +19,13 @@ public class SWTEventListener {
         }
 
         World world = player.worldObj;
-        ItemStack torchStack = new ItemStack(Block.torchWood, 1, 0);
+        Block lowTorch = SWTInit.getLowTorch();
+        ItemStack torchStack = new ItemStack(lowTorch, 1, 0);
         boolean added = player.inventory.addItemStackToInventory(torchStack);
 
         if (!added) {
-            EntityItem ei = new EntityItem(world, player.posX, player.posY + 1.0D, player.posZ, torchStack);
-            world.spawnEntityInWorld(ei);
+            EntityItem entityItem = new EntityItem(world, player.posX, player.posY + 1.0D, player.posZ, torchStack);
+            world.spawnEntityInWorld(entityItem);
         }
 
         claim.swt_setClaimedTorch(true);

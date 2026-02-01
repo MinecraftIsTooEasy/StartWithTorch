@@ -1,3 +1,9 @@
+tile.low_torch.name=Low-Quality Torch
+
+item.low_torch_item.name=Low-Quality Torch
+
+item.low_torch_item.tooltip=A dimmer, low-quality torch.
+
 swt.claim.success=You have claimed your starting torch.
 swt.claim.already=You have already claimed your torch!
 swt.claim.onlyplayer=Only players can use this command.
