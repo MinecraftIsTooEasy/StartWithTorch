@@ -7,7 +7,7 @@ public class BlockLowTorch extends BlockTorch {
 
     public BlockLowTorch(int id) {
         super(id);
-        this.setLightValue(8.0F / 16.0F);
+        this.setLightValue(12.0F / 16.0F);
         this.setUnlocalizedName("swt_low_torch");
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
