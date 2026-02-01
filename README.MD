@@ -2,8 +2,4 @@
 
 ## Features
 
-* Add a command that allows each player to claim one torch.
-
-## Usage:
-* /ctorch
-* /t
+* Add a low quality torch.
