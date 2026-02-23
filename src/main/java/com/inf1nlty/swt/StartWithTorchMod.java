@@ -13,6 +13,6 @@ public class StartWithTorchMod implements ModInitializer {
         ModResourceManager.addResourcePackDomain(NAMESPACE);
 
         MITEEvents.MITE_EVENT_BUS.register(new SWTInit());
-        MITEEvents.MITE_EVENT_BUS.register(new SWTEventListener());
+        SWTEventListener.register();
     }
 }

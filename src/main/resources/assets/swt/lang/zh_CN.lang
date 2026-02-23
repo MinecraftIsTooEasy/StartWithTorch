@@ -1,7 +1,7 @@
-tile.low_torch.name=低品质火把
+tile.low_torch.name=劣质火把
 
-item.low_torch_item.name=低品质火把
+item.low_torch_item.name=劣质火把
 
-item.low_torch_item.tooltip=一个光线更暗且品质较低的火把。
+item.low_torch_item.tooltip=一个提供光亮更小的低品质火把。
 
 swt.claim.success=成功领取开局火把。

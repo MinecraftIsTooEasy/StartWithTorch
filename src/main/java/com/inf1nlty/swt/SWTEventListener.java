@@ -1,37 +1,36 @@
 package com.inf1nlty.swt;
 
-import net.minecraft.*;
-import com.google.common.eventbus.Subscribe;
-import net.xiaoyu233.fml.reload.event.PlayerLoggedInEvent;
+import net.minecraft.Block;
+import net.minecraft.ChatMessageComponent;
+import net.minecraft.EnumChatFormatting;
+import net.minecraft.ItemStack;
+import net.minecraft.ServerPlayer;
+import moddedmite.rustedironcore.api.event.Handlers;
+import moddedmite.rustedironcore.api.event.events.PlayerLoggedInEvent;
+import moddedmite.rustedironcore.api.event.listener.IPlayerEventListener;
 
-public class SWTEventListener {
+public class SWTEventListener extends Handlers {
 
-    @Subscribe
-    public static void onPlayerLoggedIn(PlayerLoggedInEvent event) {
+    public static void register() {
 
-        ServerPlayer player = event.getPlayer();
-        if (player == null) return;
+        PlayerEvent.register(new IPlayerEventListener() {
 
-        IClaim claim = (IClaim) (Object) player;
+            @Override
+            public void onPlayerLoggedIn(PlayerLoggedInEvent event) {
 
-        if (claim.swt_hasClaimedTorch()) {
-            return;
-        }
+                ServerPlayer player = event.player();
 
-        World world = player.worldObj;
-        Block lowTorch = SWTInit.getLowTorch();
-        ItemStack torchStack = new ItemStack(lowTorch, 1, 0);
-        boolean added = player.inventory.addItemStackToInventory(torchStack);
+                if (player == null) return;
 
-        if (!added) {
-            EntityItem entityItem = new EntityItem(world, player.posX, player.posY + 1.0D, player.posZ, torchStack);
-            world.spawnEntityInWorld(entityItem);
-        }
+                if (!event.firstLogin()) return;
 
-        claim.swt_setClaimedTorch(true);
+                Block lowTorch = SWTInit.getLowTorch();
+                ItemStack torchStack = new ItemStack(lowTorch, 1, 0);
 
-        player.sendChatToPlayer(ChatMessageComponent.createFromTranslationKey("swt.claim.success").setColor(EnumChatFormatting.GREEN)
-        );
+                player.inventory.addItemStackToInventory(torchStack);
+
+                player.sendChatToPlayer(ChatMessageComponent.createFromTranslationKey("swt.claim.success").setColor(EnumChatFormatting.GREEN));
+            }
+        });
     }
-
 }

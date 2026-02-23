@@ -7,7 +7,7 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = "[免费火把]" +  project.archives_base_name
 }
 
 repositories {
@@ -41,6 +41,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     implementation files(loom.getFML().toPath())
+
+    implementation files("${lib_dir}/RustedIronCore-1.5.0.jar")
 }
 
 processResources {
