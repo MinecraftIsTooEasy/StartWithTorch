@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "start_with_torch",
-  "version": "1.0.0",
+  "version": "${version}",
   "depends": {
     "fishmodloader": ">=3.0.0",
     "rusted_iron_core": ">=1.0.0"
