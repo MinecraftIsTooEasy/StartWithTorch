@@ -10,5 +10,8 @@
     "defaultRequire": 1
   },
   "mixins": [
-  ]
+  ],
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }
